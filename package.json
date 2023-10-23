@@ -1,0 +1,17 @@
+{
+  "name": "utt-jasmine-first-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/jasmine": "^4.3.6",
+    "jasmine": "^5.1.0",
+    "prettier": "3.0.3"
+  }
+}
