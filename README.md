@@ -8,9 +8,9 @@
 
 - Ensure you have node.js installed
 - Create a new project folder, you can call it however you want
-- Open command prompt inside the folder
+- Open command prompt (terminal) inside the folder
 - Create initial package.json for dependency management with command `npm init --yes`
-- Add typescript dependency with `npm install -D ts-node`
+- Add typescript dependencies with `npm install -D typescript` and `npm install -D ts-node`
     - The argument "-D" saves the dependency as a dev dependency, see
     - https://typestrong.org/ts-node/docs/installation/
     - https://docs.npmjs.com/specifying-dependencies-and-devdependencies-in-a-package-json-file
@@ -21,9 +21,9 @@
     - "jasmine" itself is the framework we will use here, see https://jasmine.github.io/pages/getting_started.html
     - "@types/jasmine" will enable auto-completion of things like "describe", "it", "expect", etc. without the need to actively import jasmine in your spec.ts files
         - TLDR it adds jasmine related stuff to the global namespace in your project
-- Initialize jasmine with "npx jasmine init"
+- Initialize jasmine with `npx jasmine init`
 - Now you can use an IDE like VSCode or just create the folder structure yourself in the file explorer with the specified file contents
-- Create a "src" folder with an subfolder "example", that contains a "calc.ts" and a "calc.spec.ts"
+- Create a "src" folder with an subfolder "examples", that contains a "calc.ts" and a "calc.spec.ts"
 - You should have following folder structure now
     - node_modules
     - spec
@@ -59,8 +59,8 @@ describe('Calculator', () => {
   });
 });
 ```
-- Now you can update the scripts section in package.json with the following
-    - `"test": "jasmine"` 
+- Now you can update the "scripts" section in package.json with the following
+    - `"test": "jasmine"`
     - This will allow you to run jasmine with a simple `npm test`
 - With everything set up you can execute jasmine with either `npm test` or `npx jasmine`
 - If you reached this point you will see "No specs found", this is because jasmine only checks for .js files
@@ -70,7 +70,8 @@ describe('Calculator', () => {
 - Now you will see two test results if you run `npm test` again, one successful and one failing
 - Once you adapted the .ts files to make the test working you need to compile yet again with `npx tsc --build` to see updated results
     - This extra compilation step can be annoying (and might create unwanted compiled files), but is actually easily solved with the following adaptions
-    - Change the content of the scripts section in package.json to the following
+    - Delete the generated .js files 
+    - Change the content of the "scripts" section in package.json to the following
        - `"test": "ts-node node_modules/jasmine/bin/jasmine"`
     - Next you need to adapt spec/support/jasmine.json, change the content of `spec_files` array from `"**/*[sS]pec.?(m)js"` to `"**/*[sS]pec.ts"`
     - Now you should be able to run 'npm test' and get updated results without the compilation step
