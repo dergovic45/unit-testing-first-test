@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "ts-node node_modules/jasmine/bin/jasmine"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/jasmine": "^4.3.6",
+    "@types/jasmine": "^5.1.1",
     "jasmine": "^5.1.0",
-    "prettier": "3.0.3"
+    "ts-node": "^10.9.1"
   }
 }
